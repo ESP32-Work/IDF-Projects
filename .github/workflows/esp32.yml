@@ -16,8 +16,6 @@ jobs:
     
     - name: Setup ESP-IDF
       uses: espressif/esp-idf-ci-action@v1
-      with:
-        esp-idf-version: 'release/v5.2.2'
         
     - name: Build ESP-IDF Project
       run: |
@@ -38,8 +36,7 @@ jobs:
     
     - name: Setup ESP-IDF
       uses: espressif/esp-idf-ci-action@v1
-      with:
-        esp-idf-version: 'release/v5.2.2'
+
         
     - name: Download Artifact
       uses: actions/download-artifact@main
