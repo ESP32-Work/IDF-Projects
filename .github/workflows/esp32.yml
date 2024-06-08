@@ -39,7 +39,11 @@ jobs:
         idf.py build
 
     - name: Print upload
-      run: idf.py flash
+      run: |
+        . $HOME/esp/esp-idf/export.sh
+        idf.py flash
 
     - name: Print build output
-      run: idf.py monitor
+      run: |
+        . $HOME/esp/esp-idf/export.sh
+        idf.py monitor
