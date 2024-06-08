@@ -39,7 +39,7 @@ jobs:
         idf.py build
 
     - name: Print upload
-      run: idf.py -p /dev/ttyUSB0 flash
+      run: idf.py flash
 
     - name: Print build output
       run: idf.py monitor
