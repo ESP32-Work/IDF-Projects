@@ -5,3 +5,5 @@ idf.py create-project -p . LED_Blink
 idf.py build
 
 idf.py -p /dev/ttyUSB0 flash
+
+idf.py monitor

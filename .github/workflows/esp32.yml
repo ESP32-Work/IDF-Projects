@@ -38,5 +38,8 @@ jobs:
         . $HOME/esp/esp-idf/export.sh
         idf.py build
 
+    - name: Print upload
+      run: idf.py -p /dev/ttyUSB0 flash
+
     - name: Print build output
-      run: idf.py build | cat
+      run: idf.py monitor
