@@ -12,6 +12,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: Blink_LED  # Set the default working directory
+
     steps:
     - uses: actions/checkout@v3
 
@@ -32,10 +36,7 @@ jobs:
     - name: Build project
       run: |
         . $HOME/esp/esp-idf/export.sh
-        cd Blink_LED
         idf.py build
 
     - name: Print build output
-      run: |
-        cd Blink_LED
-        idf.py build | cat
+      run: idf.py build | cat
