@@ -14,7 +14,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: Blink_LED  # Set the default working directory
+        working-directory: Blink_LED
 
     steps:
     - uses: actions/checkout@v3
@@ -38,3 +38,8 @@ jobs:
         . $HOME/esp/esp-idf/export.sh
         idf.py build
 
+    - name: Create binary artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: firmware-binary
+        path: ${{ github.workspace }}/Blink_LED/build/LED_Blink.bin
