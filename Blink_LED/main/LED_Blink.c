@@ -16,11 +16,11 @@ void app_main(void)
         // Turn on the LED
         gpio_set_level(GPIO_NUM_2, 1);
         ESP_LOGI(TAG, "LED turned on");
-        vTaskDelay(1000 / portTICK_PERIOD_MS);
+        vTaskDelay(500 / portTICK_PERIOD_MS);
 
         // Turn off the LED
         gpio_set_level(GPIO_NUM_2, 0);
         ESP_LOGI(TAG, "LED turned off");
-        vTaskDelay(1000 / portTICK_PERIOD_MS);
+        vTaskDelay(500 / portTICK_PERIOD_MS);
     }
 }
