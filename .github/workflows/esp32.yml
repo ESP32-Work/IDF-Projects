@@ -41,7 +41,7 @@ jobs:
     - name: Print upload
       run: |
         . $HOME/esp/esp-idf/export.sh
-        idf.py flash
+        idf.py -p /dev/ttyUSB0 flash
 
     - name: Print build output
       run: |
