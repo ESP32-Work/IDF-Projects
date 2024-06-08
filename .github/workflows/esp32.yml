@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@main
     
     - name: Setup ESP-IDF
       uses: espressif/esp-idf-ci-action@v1
@@ -24,7 +24,7 @@ jobs:
         idf.py build
         
     - name: Upload Artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@main
       with:
         name: firmware
         path: build/*.bin
@@ -34,7 +34,7 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@main
     
     - name: Setup ESP-IDF
       uses: espressif/esp-idf-ci-action@v1
@@ -42,7 +42,7 @@ jobs:
         esp-idf-version: 'release/v5.2.2'
         
     - name: Download Artifact
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@main
       with:
         name: firmware
         
