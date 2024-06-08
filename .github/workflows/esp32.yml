@@ -38,12 +38,14 @@ jobs:
         . $HOME/esp/esp-idf/export.sh
         idf.py build
 
-    - name: Print upload
+    - name: Flash firmware
       run: |
         . $HOME/esp/esp-idf/export.sh
-        idf.py -p /dev/ttyUSB0 flash
+        SERIAL_PORT=$(python $IDF_PATH/tools/get_serial_port_list.py --inuse --from-line)
+        idf.py -p $SERIAL_PORT flash
 
-    - name: Print build output
+    - name: Monitor output
       run: |
         . $HOME/esp/esp-idf/export.sh
-        idf.py monitor
+        SERIAL_PORT=$(python $IDF_PATH/tools/get_serial_port_list.py --inuse --from-line)
+        idf.py -p $SERIAL_PORT monitor
