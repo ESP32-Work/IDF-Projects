@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - 1-wifi-configuring-idf
   pull_request:
     branches:
       - main
@@ -28,10 +27,6 @@ jobs:
         cd esp-idf
         git checkout v5.3.1
         ./install.sh
-
-    - name: Disable warnings as errors
-      run: |
-        echo "CONFIG_COMPILER_WARNINGS_AS_ERRORS=n" > sdkconfig
 
     - name: Set up environment
       run: |
