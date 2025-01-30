@@ -32,6 +32,11 @@ jobs:
       run: |
         . $HOME/esp/esp-idf/export.sh
         idf.py set-target esp32
+    
+    - name: Clean build directory
+      run: |
+        . $HOME/esp/esp-idf/export.sh
+        idf.py fullclean
 
     - name: Build project
       run: |
