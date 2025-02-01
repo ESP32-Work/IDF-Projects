@@ -1,3 +1,47 @@
+# Wi-Fi Configuration Project
+
+This project demonstrates how to configure Wi-Fi on an ESP32 using the ESP-IDF framework. The ESP32 connects to a specified Wi-Fi network and logs the connection status.
+
+## Prerequisites
+
+- ESP-IDF v5.2.2 or later
+- An ESP32 development board
+- A USB cable to connect the ESP32 to your computer
+
+## Setup
+
+1. Set up the ESP-IDF environment:
+    ```sh
+    . $HOME/esp/esp-idf/export.sh
+    ```
+
+2. Create the project:
+    ```sh
+    idf.py create-project -p . wifi_configuration
+    ```
+
+## Build and Flash
+
+1. Build the project:
+    ```sh
+    idf.py build
+    ```
+
+2. Flash the project to the ESP32:
+    ```sh
+    idf.py -p /dev/ttyUSB0 flash
+    ```
+
+3. Monitor the output:
+    ```sh
+    idf.py monitor
+    ```
+
+## Code Overview
+
+The main code for this project is in wifi_configuration.c:
+
+```c
 #include <string.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
@@ -124,3 +168,4 @@ void app_main(void)
     ESP_LOGI(TAG, "ESP_WIFI_MODE_STA");
     wifi_init_sta();
 }
+```
