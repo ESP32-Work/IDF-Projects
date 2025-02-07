@@ -25,13 +25,18 @@ jobs:
         cd ~/esp
         git clone --recursive https://github.com/espressif/esp-idf.git
         cd esp-idf
-        git checkout v5.2.2
+        git checkout v5.3.1
         ./install.sh
 
     - name: Set up environment
       run: |
         . $HOME/esp/esp-idf/export.sh
         idf.py set-target esp32
+    
+    - name: Clean build directory
+      run: |
+        . $HOME/esp/esp-idf/export.sh
+        idf.py fullclean
 
     - name: Build project
       run: |
