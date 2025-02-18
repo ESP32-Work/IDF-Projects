@@ -15,7 +15,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: Blink_LED
+        working-directory: IDF-PROJECTS/Blink_LED
 
     # steps:
     # - uses: actions/checkout@v3
