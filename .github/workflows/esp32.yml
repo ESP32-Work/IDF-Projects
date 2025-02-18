@@ -56,7 +56,7 @@ jobs:
         path: '.'
 
     - name: Create binary artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: firmware-binary
         path: ${{ github.workspace }}/Blink_LED/build/LED_Blink.bin
