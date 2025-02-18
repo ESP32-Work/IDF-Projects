@@ -15,7 +15,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: /Blink_LED
+        working-directory: Blink_LED
 
     # steps:
     # - uses: actions/checkout@v3
@@ -59,10 +59,10 @@ jobs:
       with:
         esp_idf_version: v5.3.1
         target: esp32s3
-        path: /Blink_LED
+        path: Blink_LED
 
     - name: Create binary artifact
       uses: actions/upload-artifact@v4
       with:
         name: firmware-binary
-        path: /Blink_LED/build/LED_Blink.bin
+        path: Blink_LED/build/LED_Blink.bin
