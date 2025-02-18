@@ -53,7 +53,7 @@ jobs:
       with:
         esp_idf_version: v5.3.1
         target: esp32s3
-        path: '.'
+        path: ${{ github.workspace }}/Blink_LED
 
     - name: Create binary artifact
       uses: actions/upload-artifact@v4
