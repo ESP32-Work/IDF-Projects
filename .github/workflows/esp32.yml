@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - 5-create-a-webpage
   pull_request:
     branches:
       - main
@@ -16,32 +17,43 @@ jobs:
       run:
         working-directory: Blink_LED
 
-    steps:
-    - uses: actions/checkout@v3
+    # steps:
+    # - uses: actions/checkout@v3
 
-    - name: Install ESP-IDF
-      run: |
-        mkdir -p ~/esp
-        cd ~/esp
-        git clone --recursive https://github.com/espressif/esp-idf.git
-        cd esp-idf
-        git checkout v5.3.1
-        ./install.sh
+    # - name: Install ESP-IDF
+    #   run: |
+    #     mkdir -p ~/esp
+    #     cd ~/esp
+    #     git clone --recursive https://github.com/espressif/esp-idf.git
+    #     cd esp-idf
+    #     git checkout v5.3.1
+    #     ./install.sh
 
-    - name: Set up environment
-      run: |
-        . $HOME/esp/esp-idf/export.sh
-        idf.py set-target esp32
+    # - name: Set up environment
+    #   run: |
+    #     . $HOME/esp/esp-idf/export.sh
+    #     idf.py set-target esp32
     
-    - name: Clean build directory
-      run: |
-        . $HOME/esp/esp-idf/export.sh
-        idf.py fullclean
+    # - name: Clean build directory
+    #   run: |
+    #     . $HOME/esp/esp-idf/export.sh
+    #     idf.py fullclean
 
-    - name: Build project
-      run: |
-        . $HOME/esp/esp-idf/export.sh
-        idf.py build
+    # - name: Build project
+    #   run: |
+    #     . $HOME/esp/esp-idf/export.sh
+    #     idf.py build
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v4
+      with:
+        submodules: 'recursive'
+    - name: esp-idf build
+      uses: espressif/esp-idf-ci-action@v1
+      with:
+        esp_idf_version: v5.3.1
+        target: esp32s3
+        path: '.'
 
     - name: Create binary artifact
       uses: actions/upload-artifact@v3
