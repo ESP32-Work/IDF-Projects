@@ -4,5 +4,17 @@
     "idf.port": "/dev/ttyUSB0",
     "idf.openOcdConfigs": [
         "board/esp32-wrover-kit-3.3v.cfg"
-    ]
+    ],
+    "ros.distro": "humble",
+    "python.autoComplete.extraPaths": [
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "idf.espIdfPath": "/media/ibrahim/a/ESPRESSIF_IDF/v5.3.1/esp-idf",
+    "idf.toolsPath": "/media/ibrahim/a/ESPRESSIF_IDF/idf_tools",
+    "idf.pythonInstallPath": "/usr/bin/python"
 }

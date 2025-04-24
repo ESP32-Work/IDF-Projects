@@ -11,7 +11,7 @@
 #include "lwip/err.h"
 #include "lwip/sys.h"
 
-#define WIFI_SSID      "Testwifi"
+#define WIFI_SSID      "ezgeyser"
 #define WIFI_PASSWORD  "x11y22z33"
 #define MAXIMUM_RETRY  5
 
